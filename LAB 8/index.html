@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive DOM Web Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header, footer {
+            background-color: #445; /* New shade */
+            color: #ffffff;
+            font-family: Verdana, sans-serif; /* New font */
+            padding: 15px; /* Increased padding */
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+            font-size: 18px; /* Larger text */
+        }
+        .button {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            display: inline-block;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #a1d0ff; /* Light blue hover effect */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Interactive DOM Example</h1>
+    </header>
+    <main id="mainContent">
+        <h2>Explore the DOM</h2>
+        <p>This section contains interactive content for DOM manipulation.</p>
+        <button class="button" id="modifyContentButton">Modify Content</button>
+    </main>
+    <footer>
+        <p>Created in 2024</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mainContent = document.getElementById('mainContent');
+            const originalContent = mainContent.innerHTML;
+            
+            function changeContent() {
+                mainContent.innerHTML = `
+                    <h2>Updated Interactive Area</h2>
+                    <p>This is the new interactive content.</p>
+                    <button class="button" id="restoreContentButton">Restore Content</button>
+                `;
+                document.getElementById('restoreContentButton').addEventListener('click', resetContent);
+            }
+
+            function resetContent() {
+                mainContent.innerHTML = originalContent;
+                document.getElementById('modifyContentButton').addEventListener('click', changeContent);
+            }
+
+            document.getElementById('modifyContentButton').addEventListener('click', changeContent);
+        });
+    </script>
+</body>
+</html>

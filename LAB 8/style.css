@@ -1,0 +1,15 @@
+header, footer {
+    background-color: #445; /* New shade */
+    color: #ffffff;
+    font-family: Verdana, sans-serif; /* New font */
+    padding: 15px; /* Increased padding */
+    text-align: center;
+  }
+  
+  main {
+    font-size: 18px; /* Larger text */
+  }
+  
+  .button:hover {
+    background-color: #a1d0ff; /* Light blue hover effect */
+  }

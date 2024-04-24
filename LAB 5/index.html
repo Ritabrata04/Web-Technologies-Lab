@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event RSVP Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="rsvpForm">
+        <h2>Event RSVP</h2>
+        <label for="name">Name (Required):</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Email (Required):</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="guests">Number of Guests (Required):</label>
+        <input type="number" id="guests" name="guests" min="1" required>
+        
+        <fieldset>
+            <legend>Dietary Restrictions (Optional):</legend>
+            <input type="checkbox" id="vegetarian" name="dietary" value="Vegetarian">
+            <label for="vegetarian">Vegetarian</label>
+            <input type="checkbox" id="vegan" name="dietary" value="Vegan">
+            <label for="vegan">Vegan</label>
+            <input type="checkbox" id="glutenFree" name="dietary" value="Gluten-Free">
+            <label for="glutenFree">Gluten-Free</label>
+        </fieldset>
+        
+        <label for="comments">Additional Comments (Optional):</label>
+        <textarea id="comments" name="comments"></textarea>
+        
+        <button type="submit">Submit RSVP</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
